@@ -1,0 +1,45 @@
+pipeline{
+    agent{
+        label "node"
+    }
+    stages{
+        stage("used echo"){
+            steps{
+                echo 'hello akash '
+            }
+            
+        }
+        stage("Rub a commands"){
+            steps{
+                sh '''pwd
+                ls
+                date
+               '''
+            }
+            
+        }
+        stage("sleep command"){
+            steps{
+                sleep 10
+            }
+            
+        }
+        stage("creat a timestamp"){
+            steps{
+                timestamps {
+                // some block
+            }
+        }
+            
+        }
+        stage("input from user"){
+            steps{
+                input {
+                message 'r u sure'
+            }
+        }
+            
+        }
+    }
+    
+}
